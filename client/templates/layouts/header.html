@@ -1,0 +1,41 @@
+<template name="header">
+    <nav class="navbar navbar-light bg-faded">
+        <a class="navbar-brand" href="#">Спецуха</a>
+        <ul class="nav navbar-nav">
+            <li class="nav-item {{homeActive}}">
+                <a class="nav-link" href="/give">Выдача</a>
+            </li>
+            <li class="nav-item {{addActive}}">
+                <div class="dropdown">
+                    <a href="#" class="nav-link add-dropdown-link" data-toggle="dropdown">Добавить</a>
+                    <ul class="dropdown-menu" aria-labelledby="addDropdown">
+                        <a class="dropdown-item" href="/addItem">Спецсредство</a>
+                        <a class="dropdown-item" href="/addArea">Участок</a>
+                        <a class="dropdown-item" href="/addEmployer">Работника</a>
+                        <a class="dropdown-item" href="/addPosition">Должность</a>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item {{itemsActive}}">
+                <a class="nav-link" href="/items">Спецсредства</a>
+            </li>
+            <li class="nav-item {{positionsActive}}">
+                <a class="nav-link" href="/positions">Должности</a>
+            </li>
+            <li class="nav-item {{reportsActive}}">
+                <div class="dropdown">
+                    <a href="#" class="nav-link add-dropdown-link" data-toggle="dropdown">Отчеты</a>
+                    <ul class="dropdown-menu" aria-labelledby="addDropdown">
+                        <a class="dropdown-item" href="/reports/givingReport">Отчет по выдаче</a>
+                        <a class="dropdown-item" href="/reports/outdatedReports">Отчет по просроченным выдачам</a>
+                        <a class="dropdown-item" href="/reports/tanitem">Отчет по отсутствующему спецоборудованию</a>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline pull-xs-right">
+            <input class="form-control" type="text" name="tabnum" autocomplete="off" placeholder="Табельный номер">
+            <button class="btn btn-success-outline" type="submit">Перейти</button>
+        </form>
+    </nav>
+</template>

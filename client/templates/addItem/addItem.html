@@ -1,0 +1,53 @@
+<template name="addItem">
+    <h4>Добавление спецсредства</h4>
+    <br><br>
+    <form class="add-item-form">
+        <fieldset class="form-group">
+            <label for="item-title">Название cпецсредства</label>
+            <input autocomplete="off" type="text" class="form-control" id="item-title" required="required" placeholder="Перчатки">
+            <div class="help-block area-add-help"></div>
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="item-title">Тип</label>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="season" id="season" value="winter" checked="checked">Зимняя
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="season" id="season" value="summer">Летняя
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="season" id="season" value="none">Без сезона
+                </label>
+            </div>
+            <br>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="sex" id="sex" value="man" checked="checked">Мужская
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="sex" id="sex" value="woman">Женская
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="sex" id="sex" value="none">Общая
+                </label>
+            </div>
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="item-size">Размер</label>
+            <input type="text" class="form-control" id="item-size" placeholder="45">
+            <div class="help-block area-add-help"></div>
+        </fieldset>
+        <button type="submit" class="btn btn-success">Добавить</button>
+    </form>
+    <br>
+
+</template>

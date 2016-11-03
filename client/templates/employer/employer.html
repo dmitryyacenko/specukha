@@ -1,0 +1,54 @@
+<template name="employer">
+    <div class="row">
+        <div class="col-lg-5 col-lg-offset-4 col-md-5 col-md-offset-4"><h3>Карточка сотрудника&nbsp;&nbsp;&nbsp;<a href="/printCard/{{number}}" class="btn btn-info-outline">Печать</a></h3></div>
+    </div>
+    <br><br>
+    <div class="row">
+        <div class="flexed-row">
+            <h4>Табельный №: {{number}}</h4>
+            <h4>{{lastname}} {{firstname}} {{givenname}}</h4>
+        </div>
+    </div>
+    <br><br>
+    <div class="row">
+        <div class="flexed-row">
+            <h4>{{getArea}}, {{getPosition}}</h4>
+            <h4><button class="btn btn-danger-outline remove-employer" data-employerid="{{_id}}">Удалить сотрудника</button> </h4>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <h4><a href="#" class="hidden-list-title">Показать размеры</a></h4>
+        <div class="hidden-list-container">
+            <ul>
+                {{#each sizes}}
+                  <li>{{itemTitle}}:{{size}}</li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <br><br>
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+            <h3>Выдача спецоборудования</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Спецоборудование</th>
+                        <th>Дата выдачи</th>
+                        <th>Дата следующей выдачи</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each givenItem}}
+                        <tr>
+                            <td>{{getTitle}}</td>
+                            <td>{{getDate}}</td>
+                            <td>{{getNextDate}}</td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</template>

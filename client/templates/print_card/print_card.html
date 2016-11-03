@@ -1,0 +1,225 @@
+<template name="printcard">
+    <nav class="print-bar navbar navbar-light navbar-fixed-top bg-faded">
+        <a class="navbar-brand" href="#">Личная карточка сотрудника №{{number}}</a>
+        <button class="btn btn-success print-front">Печать</button>
+        <button class="btn btn-success print-back">Печать обратной стороны</button>
+    </nav>
+    <div class="print-card col-lg-9 col-md-9 col-xs-9 col-sm-9">
+        <div class="forecard">
+            <div class="first-row">
+                <div class="left-column">
+                    АК "АЛРОСА"(ОАО)<br>
+                    <span class="underlined">Подразделение Айхальский ГОК ЦРГТО</span>
+                </div>
+                <div class="right-column">
+                    Форма № КУ-6<br>
+                    Утверждена приказом АК "АЛРОСА"<br>
+                    от 30.12.2008 №АКА 01/2013-П
+                </div>
+            </div>
+            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 header">
+                ЛИЧНАЯ КАРТОЧКА № {{number}}<br>
+                учета выданной спецодежды, спецобуви и предохранительных приспособлений
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                <table class="table table-bordered table-sm">
+                    <tr>
+                        <td>
+                            Коды
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br><br>
+
+            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                <table class="table card-table table-bordered table-sm">
+                    <tbody>
+                    <tr>
+                        <td rowspan="2">
+                            Дата составления
+                        </td>
+                        <td rowspan="2">
+                            Код вида операции
+                        </td>
+                        <td rowspan="2">
+                            Структурное подразделение
+                        </td>
+                        <td rowspan="2">
+                            Вид деятельности
+                        </td>
+                        <td colspan="2">
+                            Корреспондирующий счет
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Счёт, субсчёт
+                        </td>
+                        <td>
+                            Код аналитического учета
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                            Скл.№1100
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-1 col-sm-9 col-sm-offset-1 col-xs-9 col-xs-offset-1">
+                <div class="col-lg-9 col-md-9 col-xs-9 col-sm-9">
+                    <span class="card-param">Фамилия:</span> <span class="card-value">{{lastname}}</span><br>
+                    <span class="card-param">Имя:</span> <span class="card-value">{{firstname}}</span><br>
+                    <span class="card-param">Отчество:</span><span class="card-value">{{givenname}}</span><br>
+                    <span class="card-param">Табельный номер:</span> <span class="card-value">{{number}}</span><br>
+                    <span class="card-param">Профессия (должность):</span> <span
+                        class="card-value">{{getPosition}}</span><br>
+                    <span class="card-param">Дата поступления на работу:</span><span
+                        class="card-value"> __________</span><br>
+                    <span class="card-param">Дата изменения профессии (должности) или перевода в другое структурное подразделение</span><span
+                        class="card-value">_____</span>
+                </div>
+                <div class="col-lg-3 col-md-3 col-xs-3 col-sm-3">
+                    <span class="card-param">Пол:</span><span class="card-value">{{getSex}}</span><br>
+                    <span class="card-param">Рост:</span><span class="card-value">{{tall}}</span><br>
+                    <span class="card-param">Размер:</span><br>
+                    <span class="card-param">Одежды:</span><span class="card-value">{{body}}</span><br>
+                    <span class="card-param">Обуви:</span><span class="card-value">{{shoes}}</span><br>
+                    <span class="card-param">Головного убора:</span><span class="card-value">{{head}}</span><br>
+                    <span class="card-param">Рукавиц:</span><span class="card-value">{{gloves}}</span>
+
+                </div>
+            </div>
+            <div class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-1 col-sm-9 col-sm-offset-1 col-xs-9 col-xs-offset-1">
+                <br>
+                Предусмотрено по типовым отраслевым нормам
+                <table class="table table-bordered table-sm">
+                    <thead>
+                    <tr>
+                        <th>
+                            Наименование средств индивидуальной защиты
+                        </th>
+                        <th>
+                            Пункт типовых отраслевых норм
+                        </th>
+                        <th>
+                            Единица измерения
+                        </th>
+                        <th>
+                            Количество на год
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each getExpires}}
+                        <tr>
+                            <td>
+                                {{title}}
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                {{expires}}
+                            </td>
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="next-page">
+            <table class="table table-bordered table-sm">
+                <caption>карточка складского учета</caption>
+                <tr>
+                    <th rowspan="2">Наименование средств<br> индивидуальной защиты</th>
+                    <th rowspan="2">ГОСТ, ОСТ, <br>сертификат соответствия</th>
+                    <th colspan="5" class="text-center">Выдано</th>
+                    <th colspan="6" class="text-center">Возвращено</th>
+                </tr>
+                <tr>
+                    <th>Дата</th>
+                    <th>Кол-во</th>
+                    <th>% износа</th>
+                    <th>Стоимость руб.</th>
+                    <th>Подпись получившего</th>
+                    <th>Дата</th>
+                    <th>Кол-во</th>
+                    <th>% износа</th>
+                    <th>Стоимость руб.</th>
+                    <th>Подпись сдавшего</th>
+                    <th>Подспись принявшего</th>
+                </tr>
+                {{#each giving}}
+                    <tr>
+                        <td>
+                            {{getItemTitle}}
+                        </td>
+                        <td></td>
+                        <td>
+                            {{getGivingDate}}
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,30 @@
+.only-printer{
+    display: none;
+}
+@page {
+    size: landscape;
+    margin: 10%
+}
+@media print {
+    .only-printer{
+        display:block;
+    }
+    .giving-table th, .giving-table td{
+        padding: 0.1em;
+    }
+    body{
+        margin-left: 0;
+        padding-left:0;
+    }
+    .container{
+        margin-left:20px;
+        width: 100%;
+        max-width: none;
+    }
+    .hide-printer{
+        display:none
+    }
+    .jumbotron{
+        background: #fff;
+    }
+}

@@ -1,0 +1,13 @@
+<template name="reportFilter">
+        <div class="dropdown filter-list-dropdown">
+            <div class="nav-link">{{title}} <i class="fa fa-chevron-down hide-printer"></i></div>
+            <ul class="dropdown-menu">
+               {{#each list}}
+                   <a class="dropdown-item" href="#" data-state="uncheck" data-filtertitle="{{this}}">
+                       {{this}}
+                       <span class="checked-placeholder"> </span>
+                   </a>
+               {{/each}}
+            </ul>
+        </div>
+</template>

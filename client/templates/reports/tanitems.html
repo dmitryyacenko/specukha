@@ -1,0 +1,28 @@
+<template name="tanitems">
+    <h3>Отчет по отсутствующему спецоборудованию&nbsp;&nbsp;&nbsp;<button class="btn btn-success-outline hide-printer" onclick="window.print()">Печать</button> </h3>
+    <hr class="only-printer">
+    <table class="table giving-table table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Название
+                </th>
+                <th>
+                    Тип
+                </th>
+                <th>
+                    Последняя выдача
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each tanitems}}
+                <tr>
+                    <td>{{title}}</td>
+                    <td>{{getItemType}}</td>
+                    <td>{{getLastDate}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</template>

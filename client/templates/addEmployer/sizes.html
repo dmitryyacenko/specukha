@@ -1,0 +1,11 @@
+<template name="addEmployerSizes">
+    <h4>Размеры</h4>
+    {{#each item}}
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 form-control-label">{{title}}</label>
+            <div class="col-sm-2">
+                <input type="number" class="form-control size-input" data-itemtitle="{{title}}" placeholder="">
+            </div>
+        </div>
+    {{/each}}
+</template>

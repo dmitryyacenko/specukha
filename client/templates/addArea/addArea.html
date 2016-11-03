@@ -1,0 +1,40 @@
+<template name="addArea">
+    <h2>Участки</h2>
+    <br><br>
+    <h4>Добавление участка</h4>
+
+    <form class="add-area-form">
+        <fieldset class="form-group">
+            <label for="area-title">Название участка</label>
+            <input type="text" class="form-control area-title-input" autocomplete="off" required="required" id="area-title" placeholder="Участок 1">
+            <div class="help-block area-add-help"></div>
+        </fieldset>
+        <button type="submit" class="btn btn-success">Добавить</button>
+    </form>
+    <br><br>
+    <h4>
+        Список участков
+    </h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Название участка
+                </th>
+                <th>
+                    Действия
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each area}}
+                <tr>
+                    <td>{{title}}</td>
+                    <td><a href="#" class="remove-area" data-areaid="{{_id}}">Удалить</a> </td>
+                </tr>
+
+            {{/each}}
+        </tbody>
+    </table>
+
+</template>

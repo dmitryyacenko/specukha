@@ -1,0 +1,33 @@
+<template name="outdatedGivings">
+    <h3>Отчет по просроченным выдачам&nbsp;&nbsp;&nbsp;<button class="btn btn-success-outline hide-printer" onclick="window.print()">Печать</button> </h3>
+    <hr class="only-printer">
+    <h5 class="only-printer">{{getAreasFilter}}</h5>
+    <table class="table giving-table table-hover">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>ФИО</th>
+            <th>
+                {{>reportFilter collection="Positions" titleField="title" title="Должность" reactiveVar="PositionFilter"}}
+            </th>
+            <th>{{>reportFilter collection="Areas" titleField="title" title="Участок" reactiveVar="AreaFilter"}}</th>
+            <th>Спецсредство</th>
+            <th>Дата выдачи</th>
+            <th>Плановая дата выдачи</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each givingCase}}
+            <tr>
+                <td>{{getIndex @index}}</td>
+                <td>{{getFullName}}</td>
+                <td>{{getPosition}}</td>
+                <td>{{getArea}}</td>
+                <td>{{getItemTitle}}</td>
+                <td>{{getGivingDate}}</td>
+                <td>{{getNextGivingDate}}</td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</template>

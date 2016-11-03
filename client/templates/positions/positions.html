@@ -1,0 +1,34 @@
+<template name="positions">
+    <h4>Должности</h4>
+    <input class="form-control position-filter" placeholder="Поиск" autocomplete="off">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Должность
+                </th>
+                <th>
+                    Сроки использования
+                </th>
+                <th>
+                    Действия
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each positions}}
+                <tr>
+                    <td>{{title}}</td>
+                    <td>{{#each items}}
+                            {{title}}:{{expiresIn.years}} лет, {{expiresIn.months}} месяцев, {{expiresIn.days}} дней<br>
+                        {{/each}}
+                    </td>
+                    <td>
+                        <a href="/editPosition/{{_id}}" class="edit-position">Редактировать</a><br>
+                        <a href="#" class="remove-position" data-positionid="{{_id}}">Удалить</a>
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</template>

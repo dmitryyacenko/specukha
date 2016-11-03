@@ -1,0 +1,12 @@
+.sizes{
+    margin-left: 15px;
+}
+
+.flexed-row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.hidden-list-container{
+    display: none;
+}

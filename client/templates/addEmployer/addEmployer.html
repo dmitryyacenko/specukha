@@ -1,0 +1,69 @@
+<template name="addEmployer">
+    <h2>Добавление работника</h2>
+    <br><br>
+    <form class="employer-form">
+        <fieldset class="form-group">
+            <label for="number">Табельный номер</label>
+            <input autocomplete="off" type="text" required class="form-control" id="number" placeholder="112233">
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="first-name">Имя</label>
+            <input autocomplete="off" type="text" required class="form-control" id="first-name" placeholder="Иван">
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="last-name">Фамилия</label>
+            <input autocomplete="off" type="text" required class="form-control" id="last-name" placeholder="Иванов">
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="given-name">Отчество</label>
+            <input autocomplete="off" type="text" class="form-control" id="given-name" placeholder="Иванович">
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="sex">Пол</label>
+            <select class="form-control" id="sex">
+                <option value="man">Муж</option>
+                <option value="woman">Жен</option>
+            </select>
+        </fieldset>
+        <h5>Размеры:</h5>
+        <fieldset class="form-group">
+            <label for="tall">Рост</label>
+            <input type="text" class="form-control" id="tall" placeholder="180">
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="body">Одежды</label>
+            <input type="text" class="form-control" id="body" placeholder="52">
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="head">Головы</label>
+            <input type="text" class="form-control" id="head" placeholder="50">
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="shoes">Обуви</label>
+            <input type="text" class="form-control" id="shoes" placeholder="40">
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="gloves">Рукавиц</label>
+            <input type="text" class="form-control" id="gloves" placeholder="5">
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="area">Участок</label>
+            <select id="area" class="form-control">
+                {{#each area}}
+                    <option value="{{_id}}">{{title}}</option>
+                {{/each}}
+            </select>
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="position">Должность</label>
+            <select id="position" class="form-control">
+                {{#each position}}
+                    <option value="{{_id}}">{{title}}</option>
+                {{/each}}
+            </select>
+        </fieldset>
+        <fieldset class="form-group sizes">
+        </fieldset>
+        <button class="btn btn-success">Сохранить</button>
+    </form>
+</template>

@@ -1,0 +1,16 @@
+.filter-list-dropdown .nav-link{
+    color: #4e8fee;
+    cursor: pointer;
+}
+
+.filter-list-dropdown .fa-chevron-down{
+    transition: transform 0.2s ease;
+}
+
+.filter-list-dropdown .fa-chevron-down.opened{
+    transform: rotate(180deg);
+}
+.filter-list-dropdown .checked-placeholder{
+    margin-left: 15px;
+    color:#777;
+}

@@ -1,0 +1,6 @@
+.item-filter{
+    width:40%;
+}
+.items-table tr:target {
+    background-color: rgba(248,250,150,0.28);
+}
