@@ -1,7 +1,16 @@
 {
-  "name": "main",
+  "name": "SpecukhaWMS",
+  "version":"0.2.0",
+  "description":"An open-source warehouse management system without payments implementation",
+  "keywords":["WMS", "warehouse", "management"],
+  "license":"Apache-2.0",
   "private": true,
+  "author":{
+  	"name":"Dmitry Yacenko",
+  	"email":"dmitryyacenko@gmail.com"
+  	},
   "scripts": {
+  	"preinstall":"curl https://install.meteor.com/ | sh",
     "start": "meteor run"
   },
   "dependencies": {
